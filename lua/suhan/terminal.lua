@@ -17,7 +17,12 @@ function _G.toggle_terminal ()
 	return vim.cmd('botright split term://' .. terminal_type)
 end
 
+-- Get into terminal mode
 vim.api.nvim_set_keymap('n', '<leader>t', ':lua toggle_terminal()<CR>', { noremap = true, silent = true })
+
+-- Moves out of terminal normal mode.
 vim.api.nvim_set_keymap('t', '<leader>t', ':lua toggle_terminal()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('t', '<leader>t', '<C-\\><C-n>', { noremap = true, silent = true })
+
+-- Moves out of terminal insert mode
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
 
