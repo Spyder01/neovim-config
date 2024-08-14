@@ -15,13 +15,12 @@ return require('packer').startup(function(use)
 	-- use 'morhetz/gruvbox'
 	-- use "folke/tokyonight.nvim"
 	use ({ 'projekt0n/caret.nvim' })
-
+	use 'mbbill/undotree'
 	use 'neovim/nvim-lspconfig'  -- LSP configuration
 
 	    -- Autocompletion
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lsp'
-	use 'L3MON4D3/LuaSnip'
 	use 'saadparwaiz1/cmp_luasnip'
 	-- Optional: Additional completion sources
 	use 'hrsh7th/cmp-buffer'  -- Buffer completions

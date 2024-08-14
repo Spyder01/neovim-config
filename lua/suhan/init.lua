@@ -6,4 +6,5 @@ require("suhan.remaps")
 require("suhan.telescope")
 require("suhan.nvim-lsp")
 require("suhan.autocomplete")
+require("suhan.meta-config")
 
