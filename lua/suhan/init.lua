@@ -10,3 +10,5 @@ require("suhan.meta-config")
 require("suhan.terminal")
 require("suhan.nvim-tree")
 require("suhan.formatter")
+require("suhan.lua-line")
+

@@ -3,10 +3,20 @@ Editor = {}
 -- display functions 
 function Editor.transparent_background () 
 	vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+	vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'NONE' })            -- For inactive windows
 	vim.api.nvim_set_hl(0, 'NonText', { bg = 'NONE' })
 	vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'NONE' })
 	vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'NONE' })
+	vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'NONE' })         -- For floating windows
+	vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'NONE' })         -- For borders of floating windows
+	vim.api.nvim_set_hl(0, 'VertSplit', { bg = 'NONE' })           -- For vertical splits
+	vim.api.nvim_set_hl(0, 'WinSeparator', { bg = 'NONE' })        -- For window separators
+	vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = 'NONE' })      -- For nvim-tree
+	vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { bg = 'NONE' }) -- For the end of buffer in nvim-tree
+	vim.api.nvim_set_hl(0, 'StatusLine', { bg = 'NONE' })          -- For status line
+	vim.api.nvim_set_hl(0, 'StatusLineNC', { bg = 'NONE' })        -- For inactive status line
 end
+
 
 function Editor.match_paren() 
 	vim.g.loaded_matchparen = true
