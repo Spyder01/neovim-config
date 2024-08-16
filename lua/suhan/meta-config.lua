@@ -7,7 +7,10 @@ local Meta = {
 }
 
 Meta.config = {
-	defualt_shell = Meta.terminal_types.powershell
+	defualt_shell = Meta.terminal_types.powershell,
+	lang = {
+		 -- js = require('suhan.lang.js')
+	}
 }
 
 return Meta

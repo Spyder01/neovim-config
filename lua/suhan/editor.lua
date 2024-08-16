@@ -8,6 +8,10 @@ function Editor.transparent_background ()
 	vim.api.nvim_set_hl(0, 'EndOfBuffer', { bg = 'NONE' })
 end
 
+function Editor.match_paren() 
+	vim.g.loaded_matchparen = true
+end
+
 
 -- Autocomplete function for enclosing characters with optional indentation
 function Editor.complete_scope (start, ending, config)
@@ -49,7 +53,7 @@ end
 
 
 --appearance
-vim.cmd[[colorscheme caret]]
+vim.cmd[[colorscheme tokyonight]]
 vim.cmd[[highlight Identifier guifg=#ff0000 gui=bold]]
 Editor.transparent_background()
 
@@ -66,6 +70,8 @@ Editor.complete_scope('\'')
 Editor.complete_scope('{', '}', { new_line = true, indent = 2 })
 Editor.complete_scope('(', ')', { should_repeat = false })
 Editor.complete_scope('[', ']')
+Editor.complete_scope('<', '>')
+Editor.match_paren()
 
 return Editor
 

@@ -11,10 +11,13 @@ return require('packer').startup(function(use)
   use {"ellisonleao/glow.nvim", config = function() require("glow").setup({
 	style = "dark"
   }) end}
+
+	use 'jose-elias-alvarez/null-ls.nvim'
+
   use { 'numToStr/Comment.nvim' }
 	-- use 'morhetz/gruvbox'
-	-- use "folke/tokyonight.nvim"
-	use ({ 'projekt0n/caret.nvim' })
+	use "folke/tokyonight.nvim"
+	-- use ({ 'projekt0n/caret.nvim' })
 	use 'mbbill/undotree'
 	use 'neovim/nvim-lspconfig'  -- LSP configuration
 
@@ -29,6 +32,10 @@ return require('packer').startup(function(use)
 
 	use 'L3MON4D3/LuaSnip'        -- Snippet engine
   use 'rafamadriz/friendly-snippets' -- Preconfigured snippets
+
+	use 'nvim-tree/nvim-web-devicons'
+	use 'nvim-tree/nvim-tree.lua'
+	use 'tpope/vim-fugitive'
 
   end)
 
