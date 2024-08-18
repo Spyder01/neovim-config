@@ -1,7 +1,27 @@
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
-vim.keymap.set('n', '<leader>ex', ':NvimTreeToggle<CR>')
+function treeOpen()
+vim.keymap.set('n', '<leader>ex', function()
+		local view = require'nvim-tree.view'
+		if view.is_visible() and view.get_winnr() == vim.api.nvim_get_current_win() then
+			-- If you're in the nvim-tree window, close it
+			vim.cmd('NvimTreeClose')
+		elseif view.is_visible() then
+			-- If nvim-tree is visible but you're in another window, find the current file
+			vim.cmd('NvimTreeFindFile')
+		else
+			-- If nvim-tree is not visible, toggle it
+			vim.cmd('NvimTreeToggle')
+		end
+	end, { noremap = true, silent = true })
+end
+
+
+treeOpen()
+
+-- vim.keymap.set('n', '<leader>ex', ':NvimTreeToggle<CR>')
+-- vim.api.nvim_set_keymap('n', '<leader>e', ':NvimTreeFindFile<CR>', { noremap = true, silent = true })
 
 -- Ensure that transparency is set for floating windows
 vim.cmd('hi NormalFloat guibg=NONE')

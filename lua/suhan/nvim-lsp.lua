@@ -26,6 +26,17 @@ function go_lsp()
     }
 end
 
+function odin_lsp()
+	lsp_config.ols.setup {
+	-- cmd = {
+	-- 	  "ols",
+	-- 	},
+  filetypes = { "odin" },
+  root_dir = lsp_config.util.root_pattern("odin.project"),
+  settings = {},
+}
+end
+
 function lua_lsp()
     lsp_config.lua_ls.setup{
         capabilities = capabilities,
@@ -74,6 +85,7 @@ function c_lsp()
 end
 
 -- Call LSP setups
+odin_lsp()
 go_lsp()
 lua_lsp()
 c_lsp()
